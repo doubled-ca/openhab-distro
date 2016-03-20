@@ -1,3 +1,39 @@
+Group Zone1     "Upstairs Hallway"
+Group Zone2     "Kitchen"
+Group Zone3    "Living Room"
+Group Zone5     "Back Deck"
+
+Switch PowerSwitch1 "Power" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zonePower" }
+Switch PowerSwitch2 "Power" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zonePower" }
+Switch PowerSwitch3 "Power" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zonePower" }
+Switch PowerSwitch5 "Power" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zonePower" }
+
+Dimmer VolumeDimmer1 "Volume [%.1f] %" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneVolumeDimmer" }
+Dimmer VolumeDimmer2 "Volume [%.1f] %" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneVolumeDimmer" }
+Dimmer VolumeDimmer3 "Volume [%.1f] %" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneVolumeDimmer" }
+Dimmer VolumeDimmer5 "Volume [%.1f] %" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneVolumeDimmer" }
+
+Number VolumeDb1    "Volume [%.1f] dB" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneVolumeDb" }
+Number VolumeDb2    "Volume [%.1f] dB" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneVolumeDb" }
+Number VolumeDb3    "Volume [%.1f] dB" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneVolumeDb" }
+Number VolumeDb5    "Volume [%.1f] dB" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneVolumeDb" }
+
+Switch MuteSwitch1 "Mute" (Zone1)   { channel="audioauthority:ipSonaflex:sf16m:output1#zoneMute" }
+Switch MuteSwitch2 "Mute" (Zone2)   { channel="audioauthority:ipSonaflex:sf16m:output2#zoneMute" }
+Switch MuteSwitch3 "Mute" (Zone3)   { channel="audioauthority:ipSonaflex:sf16m:output3#zoneMute" }
+Switch MuteSwitch5 "Mute" (Zone5)   { channel="audioauthority:ipSonaflex:sf16m:output5#zoneMute" }
+
+Number Input1    (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneInputSwitch" }
+Number Input2    (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneInputSwitch" }
+Number Input3    (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneInputSwitch" }
+Number Input5    (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneInputSwitch" }
+
+String Name1       (Zone1) {   channel="audioauthority:ipSonaflex:sf16m:output1#zoneName" }
+String Name2       (Zone2) {   channel="audioauthority:ipSonaflex:sf16m:output2#zoneName" }
+String Name3       (Zone3) {   channel="audioauthority:ipSonaflex:sf16m:output3#zoneName" }
+String Name5       (Zone5) {   channel="audioauthority:ipSonaflex:sf16m:output5#zoneName" }
+
+
 Group gFF           "First Floor"   <firstfloor>
 Group gGF           "Ground Floor"  <groundfloor>
 Group gC            "Cellar"        <cellar>

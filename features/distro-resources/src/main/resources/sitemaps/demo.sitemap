@@ -1,5 +1,47 @@
 sitemap demo label="Main Menu"
 {
+    Frame {
+        Group label="Upstairs Hallway" {
+            Frame  {
+                Switch      item=PowerSwitch1 icon="socket-us"
+                Slider      item=VolumeDimmer1
+                SetPoint    item=VolumeDb1 min_value="-80" max_value="0" step="5"
+                Switch      item=MuteSwitch1 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
+                Switch   item=Input1 label="Input Source" mappings=[21=Sonos, 22=Oppo]  icon="settings"
+            }
+        }
+    
+        Group label="Kitchen" {
+            Frame  {
+                Switch      item=PowerSwitch2 icon="socket-us"
+                Slider      item=VolumeDimmer2
+                SetPoint    item=VolumeDb2 min_value="-80" max_value="0" step="5"
+                Switch      item=MuteSwitch2 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
+                Switch   item=Input2 label="Input Source" mappings=[21=Sonos, 22=Oppo]  icon="settings"
+            }
+        }
+    
+        Group label="Living Room" {
+            Frame  {
+                Switch      item=PowerSwitch3 icon="socket-us"
+                Slider      item=VolumeDimmer3
+                SetPoint    item=VolumeDb3 min_value="-80" max_value="0" step="5"
+                Switch      item=MuteSwitch3 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
+                Switch      item=Input3 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
+            }
+        }
+    
+        Group label="Back Deck" {
+            Frame  {
+                Switch      item=PowerSwitch5 icon="socket-us"
+                Slider      item=VolumeDimmer5
+                SetPoint    item=VolumeDb5 min_value="-80" max_value="0" step="5"
+                Switch      item=MuteSwitch5 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
+                Switch   item=Input5 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
+            }
+        }
+    }
+    
 	Frame {
 		Group item=gFF label="First Floor" icon="firstfloor"
 		Group item=gGF label="Ground Floor" icon="groundfloor"

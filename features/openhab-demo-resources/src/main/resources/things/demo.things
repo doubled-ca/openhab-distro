@@ -1,0 +1,2 @@
+yahooweather:weather:berlin [ location=638242 ]
+audioauthority:ipSonaflex:sf16m [ address="172.16.1.12", port=23, unit=1, activeZones=7 ]
