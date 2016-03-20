@@ -4,28 +4,28 @@ sitemap demo label="Main Menu"
         Group label="Upstairs Hallway" {
             Frame  {
                 Switch      item=PowerSwitch1 icon="socket-us"
-                Slider      item=VolumeDimmer1 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb1 label="Volume[%s dB] "minValue=-80 maxValue=0 step=5
+                Slider      item=VolumeDimmer1
+                SetPoint    item=VolumeDb1 min_value="-80" max_value="0" step="5"
                 Switch      item=MuteSwitch1 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
-                Switch   item=Input1 label="Input Source" mappings=[1=Sonos, 3=Oppo]  icon="settings"
+                Switch   item=Input1 label="Input Source" mappings=[21=Sonos, 22=Oppo]  icon="settings"
             }
         }
     
         Group label="Kitchen" {
             Frame  {
                 Switch      item=PowerSwitch2 icon="socket-us"
-                Slider      item=VolumeDimmer2 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb2 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
+                Slider      item=VolumeDimmer2
+                SetPoint    item=VolumeDb2 min_value="-80" max_value="0" step="5"
                 Switch      item=MuteSwitch2 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
-                Switch   item=Input2 label="Input Source" mappings=[1=Sonos, 3=Oppo]  icon="settings"
+                Switch   item=Input2 label="Input Source" mappings=[21=Sonos, 22=Oppo]  icon="settings"
             }
         }
     
         Group label="Living Room" {
             Frame  {
                 Switch      item=PowerSwitch3 icon="socket-us"
-                Slider      item=VolumeDimmer3 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb3 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
+                Slider      item=VolumeDimmer3
+                SetPoint    item=VolumeDb3 min_value="-80" max_value="0" step="5"
                 Switch      item=MuteSwitch3 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch      item=Input3 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
@@ -34,26 +34,87 @@ sitemap demo label="Main Menu"
         Group label="Back Deck" {
             Frame  {
                 Switch      item=PowerSwitch5 icon="socket-us"
-                Slider      item=VolumeDimmer5 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb5 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
+                Slider      item=VolumeDimmer5
+                SetPoint    item=VolumeDb5 min_value="-80" max_value="0" step="5"
                 Switch      item=MuteSwitch5 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch   item=Input5 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
         }
-        
-        Group label="Master BR" {
-            Frame  {
-                Switch      item=PowerSwitch7 icon="socket-us"
-                Slider      item=VolumeDimmer7 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb7 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
-                Switch      item=MuteSwitch7 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
-                Switch   item=Input7 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
-            }
+    }
+    
+	Frame {
+		Group item=gFF label="First Floor" icon="firstfloor"
+		Group item=gGF label="Ground Floor" icon="groundfloor"
+		Group item=gC label="Cellar" icon="cellar"
+		Group item=Garden icon="garden"
+	}
+	Frame label="Weather" {
+		Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="NULL"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+			Frame {
+				Text item=Weather_Temp_Max valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Weather_Temp_Min valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+				Text item=Weather_LastUpdate visibility=[Weather_LastUpdate>30] valuecolor=[Weather_LastUpdate>120="orange", Weather_LastUpdate>300="red"]
+			}
+			Frame {
+				Switch item=Weather_Chart_Period label="Chart Period" icon="chart" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Weather_Chart period=h refresh=600000 visibility=[Weather_Chart_Period==0, Weather_Chart_Period=="NULL"]
+				Chart item=Weather_Chart period=D refresh=3600000 visibility=[Weather_Chart_Period==1]
+				Chart item=Weather_Chart period=W refresh=3600000 visibility=[Weather_Chart_Period==2]
+			}
+		}
+        Text label="Astronomical Data" icon="sun" {
+            Text item=Sun_Elevation
+            Text item=Sun_Azimuth
+            Text item=Sunrise_Time
+            Text item=Sunset_Time
+            Text item=Moon_Elevation
+            Text item=Moon_Azimuth
+            Text item=Moon_Phase
         }
-        
-    }
-    Frame {
-        Switch item=allPower mappings=[OFF="All Off",ON="All On"]
-        Switch item=inPower mappings=[OFF="All Off",ON="All On"]
-    }
+	}
+    Frame label="Demo" {
+		Text item=CurrentDate
+		Text label="Group Demo" icon="firstfloor" {
+			Switch item=Lights mappings=[OFF="All Off"]
+			Group item=Heating
+			Group item=Windows
+			Text item=Temperature
+		}
+		Text label="Widget Overview" icon="chart" {
+			Frame label="Binary Widgets" {
+				Switch item=DemoSwitch label="Toggle Switch"
+				Switch item=DemoSwitch label="Button Switch" mappings=[ON="On"]
+			}
+			Frame label="Discrete Widgets" {
+				Selection item=Scene_General label="Scene Selection" mappings=[0=off, 1=TV, 2=Dinner, 3=Reading]
+				Switch item=Scene_General label="Scene" mappings=[1=TV, 2=Dinner, 3=Reading]
+				Setpoint item=Temperature_Setpoint minValue=16 maxValue=28 step=0.5
+			}
+			Frame label="Percent-based Widgets" {
+				Slider item=DimmedLight switchSupport
+				Colorpicker item=RGBLight icon="slider"
+				Switch item=DemoShutter
+				Slider item=DemoBlinds
+			}
+			Frame label="Map/Location" {
+				Mapview item=DemoLocation height=10
+			}
+		}
+		Text label="Multimedia" icon="video" {
+			Frame label="Radio Control" {
+				Selection item=Radio_Station mappings=[0=off, 1=HR3, 2=SWR3, 3=FFH]
+				Slider item=Volume icon="soundvolume"
+			}
+			Frame label="Multimedia Widgets" {
+				Image url="https://raw.github.com/wiki/openhab/openhab/images/features.png" label="openHAB" {
+					Text label="http://www.openHAB.org" icon="icon"
+				}
+				Video url="http://www.openhab.org/assets/smarthome.mp4"
+				Webview url="http://heise-online.mobi/" height=8
+                Image url="http://fpoimg.com/320x240?text=openHAB" item=ImageURL
+			}
+		}
+	}
 }
+
+// vim: syntax=Xtend
