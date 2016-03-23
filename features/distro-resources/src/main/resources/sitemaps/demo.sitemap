@@ -5,7 +5,7 @@ sitemap demo label="Main Menu"
             Frame  {
                 Switch      item=PowerSwitch1 icon="socket-us"
                 Slider      item=VolumeDimmer1 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb1 label="Volume[%s dB]" minValue="-80" maxValue="0" step="5"
+                Setpoint    item=VolumeDb1 label="Volume[%s dB] "minValue=-80 maxValue=0 step=5
                 Switch      item=MuteSwitch1 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch   item=Input1 label="Input Source" mappings=[1=Sonos, 3=Oppo]  icon="settings"
             }
@@ -15,7 +15,7 @@ sitemap demo label="Main Menu"
             Frame  {
                 Switch      item=PowerSwitch2 icon="socket-us"
                 Slider      item=VolumeDimmer2 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb2 label="Volume[%s dB]" minValue="-80" maxValue="0" step="5"
+                Setpoint    item=VolumeDb2 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
                 Switch      item=MuteSwitch2 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch   item=Input2 label="Input Source" mappings=[1=Sonos, 3=Oppo]  icon="settings"
             }
@@ -25,7 +25,7 @@ sitemap demo label="Main Menu"
             Frame  {
                 Switch      item=PowerSwitch3 icon="socket-us"
                 Slider      item=VolumeDimmer3 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb3 label="Volume[%s dB]" minValue="-80" maxValue="0" step="5"
+                Setpoint    item=VolumeDb3 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
                 Switch      item=MuteSwitch3 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch      item=Input3 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
@@ -35,7 +35,7 @@ sitemap demo label="Main Menu"
             Frame  {
                 Switch      item=PowerSwitch5 icon="socket-us"
                 Slider      item=VolumeDimmer5 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb5 label="Volume[%s dB]" minValue="-80" maxValue="0" step="5"
+                Setpoint    item=VolumeDb5 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
                 Switch      item=MuteSwitch5 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch   item=Input5 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
@@ -45,7 +45,7 @@ sitemap demo label="Main Menu"
             Frame  {
                 Switch      item=PowerSwitch7 icon="socket-us"
                 Slider      item=VolumeDimmer7 label="Volume[%s %%]"
-                Setpoint    item=VolumeDb7 label="Volume[%s dB]" minValue="-80" maxValue="0" step="5"
+                Setpoint    item=VolumeDb7 label="Volume[%s dB]" minValue=-80 maxValue=0 step=5
                 Switch      item=MuteSwitch7 mappings=[OFF=OFF, ON=ON] icon="volume_mute"
                 Switch   item=Input7 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
