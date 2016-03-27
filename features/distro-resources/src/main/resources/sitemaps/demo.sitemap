@@ -50,6 +50,11 @@ sitemap demo label="Main Menu"
                 Switch   item=Input7 label="Input Source" mappings=[1=Sonos, 3=Oppo] icon="settings"
             }
         }
+        
+    }
+    Frame {
+        Switch item=allPower mappings=[OFF="All Off",ON="All On"]
+        Switch item=inPower mappings=[OFF="All Off",ON="All On"]
     }
 }
 
