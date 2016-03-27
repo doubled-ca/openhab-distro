@@ -4,11 +4,14 @@ Group Zone3    "Living Room"
 Group Zone5    "Back Deck"
 Group Zone7    "Master BR"
 
-Switch PowerSwitch1 "Power" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zonePower" }
-Switch PowerSwitch2 "Power" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zonePower" }
-Switch PowerSwitch3 "Power" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zonePower" }
-Switch PowerSwitch5 "Power" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zonePower" }
-Switch PowerSwitch7 "Power" (Zone7) { channel="audioauthority:ipSonaflex:sf16m:output7#zonePower" }
+Group:Switch:OR(ON, OFF) allPower "Power All [(%d)]"
+Group:Switch:OR(ON, OFF) inPower "Power Inside [(%d)]"
+
+Switch PowerSwitch1 "Power" (Zone1,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output1#zonePower" }
+Switch PowerSwitch2 "Power" (Zone2,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output2#zonePower" }
+Switch PowerSwitch3 "Power" (Zone3,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output3#zonePower" }
+Switch PowerSwitch5 "Power" (Zone5,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output5#zonePower" }
+Switch PowerSwitch7 "Power" (Zone7,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output7#zonePower" }
 
 Dimmer VolumeDimmer1 "Volume [%.1f] %" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneVolumeDimmer" }
 Dimmer VolumeDimmer2 "Volume [%.1f] %" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneVolumeDimmer" }
