@@ -6,7 +6,7 @@
 
   <groupId>org.openhab.demo</groupId>
   <artifactId>org.openhab.demo.app</artifactId>
-  <version>2.5.0-SNAPSHOT</version>
+  <version>2.5.5-SNAPSHOT</version>
 
   <name>openHAB Demo :: App</name>
 
@@ -23,14 +23,14 @@
     <dependency>
       <groupId>org.openhab.core.bom</groupId>
       <artifactId>org.openhab.core.bom.runtime</artifactId>
-      <version>${project.version}</version>
+      <version>2.5.0</version>
       <type>pom</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.openhab.core.bom</groupId>
       <artifactId>org.openhab.core.bom.openhab-core</artifactId>
-      <version>${project.version}</version>
+      <version>2.5.0</version>
       <type>pom</type>
       <scope>runtime</scope>
     </dependency>
@@ -45,12 +45,6 @@
       <artifactId>org.openhab.ui.bom.openhab-ui</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openhab.addons.bundles</groupId>
-      <artifactId>org.openhab.transform.map</artifactId>
-      <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
 
