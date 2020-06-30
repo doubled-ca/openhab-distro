@@ -1,0 +1,44 @@
+Group Zone1    "Upstairs Hallway"
+Group Zone2    "Kitchen"
+Group Zone3    "Living Room"
+Group Zone5    "Back Deck"
+Group Zone7    "Master BR"
+
+Group:Switch:OR(ON, OFF) allPower "Power All [(%d)]"
+Group:Switch:OR(ON, OFF) inPower "Power Inside [(%d)]"
+
+Switch PowerSwitch1 "Power" (Zone1,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output1#zonePower" }
+Switch PowerSwitch2 "Power" (Zone2,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output2#zonePower" }
+Switch PowerSwitch3 "Power" (Zone3,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output3#zonePower" }
+Switch PowerSwitch5 "Power" (Zone5,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output5#zonePower" }
+Switch PowerSwitch7 "Power" (Zone7,allPower,inPower) { channel="audioauthority:ipSonaflex:sf16m:output7#zonePower" }
+
+Dimmer VolumeDimmer1 "Volume [%.1f] %" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneVolumeDimmer" }
+Dimmer VolumeDimmer2 "Volume [%.1f] %" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneVolumeDimmer" }
+Dimmer VolumeDimmer3 "Volume [%.1f] %" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneVolumeDimmer" }
+Dimmer VolumeDimmer5 "Volume [%.1f] %" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneVolumeDimmer" }
+Dimmer VolumeDimmer7 "Volume [%.1f] %" (Zone7) { channel="audioauthority:ipSonaflex:sf16m:output7#zoneVolumeDimmer" }
+
+Number VolumeDb1    "Volume [%.1f] dB" (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneVolumeDb" }
+Number VolumeDb2    "Volume [%.1f] dB" (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneVolumeDb" }
+Number VolumeDb3    "Volume [%.1f] dB" (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneVolumeDb" }
+Number VolumeDb5    "Volume [%.1f] dB" (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneVolumeDb" }
+Number VolumeDb7    "Volume [%.1f] dB" (Zone7) { channel="audioauthority:ipSonaflex:sf16m:output7#zoneVolumeDb" }
+
+Switch MuteSwitch1 "Mute" (Zone1)   { channel="audioauthority:ipSonaflex:sf16m:output1#zoneMute" }
+Switch MuteSwitch2 "Mute" (Zone2)   { channel="audioauthority:ipSonaflex:sf16m:output2#zoneMute" }
+Switch MuteSwitch3 "Mute" (Zone3)   { channel="audioauthority:ipSonaflex:sf16m:output3#zoneMute" }
+Switch MuteSwitch5 "Mute" (Zone5)   { channel="audioauthority:ipSonaflex:sf16m:output5#zoneMute" }
+Switch MuteSwitch7 "Mute" (Zone7)   { channel="audioauthority:ipSonaflex:sf16m:output7#zoneMute" }
+
+Number Input1    (Zone1) { channel="audioauthority:ipSonaflex:sf16m:output1#zoneInputSwitch" }
+Number Input2    (Zone2) { channel="audioauthority:ipSonaflex:sf16m:output2#zoneInputSwitch" }
+Number Input3    (Zone3) { channel="audioauthority:ipSonaflex:sf16m:output3#zoneInputSwitch" }
+Number Input5    (Zone5) { channel="audioauthority:ipSonaflex:sf16m:output5#zoneInputSwitch" }
+Number Input7    (Zone7) { channel="audioauthority:ipSonaflex:sf16m:output7#zoneInputSwitch" }
+
+String Name1       (Zone1) {   channel="audioauthority:ipSonaflex:sf16m:output1#zoneName" }
+String Name2       (Zone2) {   channel="audioauthority:ipSonaflex:sf16m:output2#zoneName" }
+String Name3       (Zone3) {   channel="audioauthority:ipSonaflex:sf16m:output3#zoneName" }
+String Name5       (Zone5) {   channel="audioauthority:ipSonaflex:sf16m:output5#zoneName" }
+String Name7       (Zone7) {   channel="audioauthority:ipSonaflex:sf16m:output7#zoneName" }
